@@ -27,3 +27,45 @@ public:
         return res;
     }
 };
+
+
+//排序+两重循环+双指针+剪枝
+class Solution {
+public:
+    vector<vector<int>> fourSum(vector<int>& nums, int target) {
+        vector<vector<int>> res;
+        if (nums.size() < 4) return res;
+        sort(nums.begin(), nums.end());//从小到大排序
+        for (int i = 0; i < nums.size(); i++) {
+            if (i && nums[i-1] == nums[i]) continue;//去重
+            
+            if (i+3 < nums.size() && nums[i] + nums[i+1] + nums[i+2] + nums[i+3] > target) 
+                break;//剪枝
+            if (nums[i] + nums[nums.size()-1] + nums[nums.size()-2] + nums[nums.size()-3] < target) 
+                continue;//剪枝
+
+            for (int j = i+1; j < nums.size(); j++) {
+                if (j > i + 1 && nums[j-1] == nums[j]) continue;//去重
+                
+                if (j+2 < nums.size() && nums[i] + nums[j] + nums[j+1] + nums[j+2] > target) 
+                    break;//剪枝,最小都比target大
+                if (nums[i] + nums[j] + nums[nums.size()-1] + nums[nums.size()-2] < target) 
+                    continue;//剪枝
+
+                int k = j + 1, m = nums.size() - 1;
+                for (; k < m; k++) {
+                    if (k > j + 1 && nums[k-1] == nums[k]) continue;//去重
+
+                    while (k < m && nums[i] + nums[j] + nums[k] + nums[m] > target) {
+                        m--;
+                    }
+                    if (k==m) break;
+                    //cout << nums[i] + nums[j] + nums[k] + nums[m] << endl;
+                    if (nums[i] + nums[j] + nums[k] + nums[m] == target) 
+                        res.push_back({nums[i], nums[j], nums[k], nums[m]});
+                }
+            }
+        }
+        return res;
+    }
+};
