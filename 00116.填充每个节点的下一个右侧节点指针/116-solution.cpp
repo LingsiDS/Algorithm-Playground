@@ -35,3 +35,29 @@ public:
         return root;
     }
 };
+
+//递归版本，前序遍历，在遍历当前节点时构建链接关系，递归到下一层时可以使用到
+//时间复杂度O(n)，空间复杂度O(logn)
+class Solution {
+public:
+
+    void dfs(Node *root) {
+        if (root == nullptr) return;
+
+        if (root->left) {
+            root->left->next = root->right;//完全二叉树保证，左子树存在，右子树存在或者为null
+        }
+        if (root->right) {
+            if (root->next) {
+                root->right->next = root->next->left;//root->next->left存在或者为null
+            }
+        }
+        dfs(root->left);
+        dfs(root->right);
+    }
+
+    Node* connect(Node* root) {
+        dfs(root);
+        return root;
+    }
+};

@@ -11,8 +11,8 @@
 //时间复杂度O(n*m)，空间复杂度O(n*m)
 class Solution {
 public:
-    int minDistance(string word1, string word2) {
-        int n = word1.size(), m = word2.size();
+    int minDistance(string a, string b) {
+        int n = a.size(), m = b.size();
         //dp[i][j]:将a[0~i]变成b[0~j]的最小操作次数
         vector<vector<int>> dp(n+2, vector<int>(m+2, 0));
 
@@ -23,7 +23,7 @@ public:
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= m; j++) {
                 dp[i][j] = min(dp[i-1][j] + 1, dp[i][j-1] + 1);
-                if (word1[i-1] == word2[j-1])
+                if (a[i-1] == b[j-1])
                     dp[i][j] = min(dp[i][j], dp[i-1][j-1]);
                 else dp[i][j] = min(dp[i][j], dp[i-1][j-1] + 1);
             }

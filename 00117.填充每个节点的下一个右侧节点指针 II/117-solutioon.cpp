@@ -74,3 +74,37 @@ public:
         return root;
     }
 };
+
+
+//第二种写法简化一点的版本
+class Solution {
+public:
+    Node* connect(Node* root) {
+        Node *head = root, *pre = nullptr, *cur = nullptr, *nextHead;
+        while (head) {
+            nextHead = nullptr;
+            pre = nullptr;
+            while (head) {
+                if (head->left) {
+                    if (!nextHead) nextHead = head->left;
+                    if (pre) {
+                        pre->next = head->left;
+                        pre = pre->next;
+                    }
+                    else pre = head->left;
+                }
+                if (head->right) {
+                    if (!nextHead) nextHead = head->right;
+                    if (pre) {
+                        pre->next = head->right;
+                        pre = pre->next;
+                    }
+                    else pre = head->right;
+                }
+                head = head->next;
+            }
+            head = nextHead;;
+        }
+        return root;
+    }
+};
