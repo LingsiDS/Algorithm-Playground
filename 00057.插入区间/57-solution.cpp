@@ -1,3 +1,30 @@
+//2020年11月4日 16:33:19重做
+class Solution {
+public:
+    vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {
+        vector<vector<int>> res;
+        int st = newInterval[0], ed = newInterval[1];
+        int i = 0;
+        int push = 0;//标记新区间是否已经插入
+        for (; i < intervals.size(); i++) {
+            if (st <= intervals[i][1] && ed >= intervals[i][0]) {//新区间和老区间有交集
+                st = min(st, intervals[i][0]);
+                ed = max(ed, intervals[i][1]);//更新区间大小
+            } else if (!push && intervals[i][0] > ed) {//新区间与老区间没有交集了，插入新区建
+                push = 1;
+                res.push_back({st, ed});
+                i--;//再次考虑老区间，将老区间插入res中
+            }
+            else {
+                res.push_back(intervals[i]);//插入老区间
+            }
+        }
+        if (!push) res.push_back({st, ed});//新区建还没插入，插入
+        return res;
+    }
+};
+
+
 //遍历区间插入，需要考虑的情况较多，时间复杂度O(n)，空间复杂度O(1)
 class Solution {
 public:
