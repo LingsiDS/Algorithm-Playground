@@ -1,9 +1,11 @@
-# Leetcode-Solutions
-记录自己的leetcode题解之路
+# LeetCode-Solutions
+记录LeetCode之路
 
-|  No  |                            Title                             |                  Solution                  | Tag  | Difficulty | Recommend |
-| :--: | :----------------------------------------------------------: | :----------------------------------------: | :--: | :--------: | :-------: |
-|  39  |                     39. Combination Sum                      |  [C++](39. Combination Sum/solution.cpp)   | DFS  |   medium   |    ★★     |
-|  40  | [40. Combination Sum II](https://leetcode-cn.com/problems/combination-sum-ii/) | [C++](40. Combination Sum II\Solution.cpp) | DFS  |   medium   |    ★★     |
-| 994  | [994. Rotting Oranges](https://leetcode-cn.com/problems/rotting-oranges/) |   [C++](994. Rotting Oranges/readme.md)    | BFS  |    easy    |    ★★★    |
+
+
+## 题目整理
+
+### **记忆化递归**
+
+- [343.整数拆分](https://leetcode-cn.com/problems/integer-break/)，[剑指offer-14.剪绳子](https://leetcode-cn.com/problems/jian-sheng-zi-lcof/)
 
