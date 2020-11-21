@@ -1,3 +1,33 @@
+//插入排序，第二遍，2020年11月20日 16:39:37
+class Solution {
+public:
+    ListNode* insertionSortList(ListNode* head) {
+        if (!head || !head) return head;
+        ListNode *dumy = new ListNode(-1);
+        dumy->next = head;
+        
+        ListNode *pre = head;
+        head = head->next;
+        while (head) {
+            if (head->val >= pre->val) {
+                head = head->next;
+                pre = pre->next;
+                continue;
+            }
+            ListNode *insertPos = dumy;
+            while (insertPos->next && insertPos->next->val < head->val) {
+                insertPos = insertPos->next;
+            }
+            //插入操作
+            pre->next = head->next;
+            head->next = insertPos->next;
+            insertPos->next = head;
+            head = pre->next;
+        }
+        return dumy->next;
+    }
+};
+
 //时间复杂度O(n^2)，空间复杂度O(1)
 //如果cur->val 比 pre->val 大，可以不用进行插入，这样对于大致有序的数据可以更快
 class Solution {

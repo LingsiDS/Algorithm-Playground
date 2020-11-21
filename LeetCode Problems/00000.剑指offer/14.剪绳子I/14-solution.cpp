@@ -33,3 +33,18 @@ public:
         return f[n] = res;
     }
 };
+
+
+//数学，证明见https://www.acwing.com/solution/content/368/
+class Solution {
+public:
+    int cuttingRope(int n) {
+        if (n == 2) return 1;
+        if (n == 3) return 2;
+
+        int res = 1;
+        while (n >= 5) n -= 3, res *= 3;
+        //此时n只可能为2，3，4
+        return res * n;
+    }
+};
