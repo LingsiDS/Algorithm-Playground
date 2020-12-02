@@ -29,32 +29,23 @@ class Solution {
 public:
     string removeKdigits(string num, int k) {
         vector<char> stk;
-        //一个元素保留下来的条件是其高位的元素都比它小，否则将它作为高位会获得更小的元素
-        int i = 0;
-        for (; i < num.size() && k; i++) {
-            if (stk.empty()) stk.push_back(num[i]);
-            else {
-                if (stk[stk.size()-1] <= num[i]) stk.push_back(num[i]);
-                else {
-                    while (stk.size() && stk[stk.size()-1] > num[i] && k){
-                        stk.pop_back();//删除元素
-                        k--;
-                    } 
-                    stk.push_back(num[i]);
-                }
+        int remain = num.size() - k;
+        for (int i = 0; i < num.size(); i++) {
+            while (stk.size() && stk[stk.size() - 1] > num[i] && k) {
+                k--;
+                stk.pop_back();
             }
+            stk.push_back(num[i]);
         }
+
         string res;
-        for (auto c: stk) {
-            if (res.empty() && c == '0') continue;//去掉前导0
-            res += c;
+        for (int i = 0; i < stk.size(); i++) {
+            if (remain) {
+                if (res.empty() && stk[i] == '0') continue;
+                res.push_back(stk[i]);
+                remain--;
+            } else break;
         }
-        res += num.substr(i);
-        while (res.size() && k) {
-            res.pop_back();
-            k--;
-        }
-        if (res.empty()) return "0";
-        return res;
+        return res.size() ? res : "0";
     }
 };
