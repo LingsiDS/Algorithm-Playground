@@ -20,11 +20,14 @@
 
 贪心很多时候是从直观的思路出发，猜测一个解法，然后对样例使用这种方法，如果可行，可以先尝试实现。贪心算法的正确性证明往往比较困难。
 
-贪心往往与最大最小相关，所以可能会结合其他算法或者数据结果一起使用，比如结合排序，堆等
+贪心往往与最大最小相关，所以可能会结合其他算法或者数据结构一起使用，比如结合排序，堆等
 
 - [452.用最少数量的箭引爆气球](https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/)
 - [976. 三角形的最大周长](https://leetcode-cn.com/problems/largest-perimeter-triangle/) （贪心、排序、数学）
 - [767. 重构字符串](https://leetcode-cn.com/problems/reorganize-string/) （贪心 、堆）
+- [659. 分割数组为连续子序列](https://leetcode-cn.com/problems/split-array-into-consecutive-subsequences/) (第一次没做出来)
+- [621. 任务调度器](https://leetcode-cn.com/problems/task-scheduler/) （还有一种数学解法）
+- [376. 摆动序列](https://leetcode-cn.com/problems/wiggle-subsequence/)
 
 ### 分治
 
@@ -37,4 +40,18 @@
 ### 桶排序/基数排序
 
 - [164. 最大间距](https://leetcode-cn.com/problems/maximum-gap/)
+
+### 搜索
+
+- [842. 将数组拆分成斐波那契序列](https://leetcode-cn.com/problems/split-array-into-fibonacci-sequence/)
+
+### 数学
+
+[204. 计数质数](https://leetcode-cn.com/problems/count-primes/)
+
+[263. 丑数](https://leetcode-cn.com/problems/ugly-number/)
+
+### 队列
+
+[649. Dota2 参议院](https://leetcode-cn.com/problems/dota2-senate/)
 
