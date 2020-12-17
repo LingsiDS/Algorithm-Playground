@@ -28,10 +28,12 @@
 - [659. 分割数组为连续子序列](https://leetcode-cn.com/problems/split-array-into-consecutive-subsequences/) (第一次没做出来)
 - [621. 任务调度器](https://leetcode-cn.com/problems/task-scheduler/) （还有一种数学解法）
 - [376. 摆动序列](https://leetcode-cn.com/problems/wiggle-subsequence/)
+- [714. 买卖股票的最佳时机含手续费](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)
 
 ### 分治
 
 - [493. 翻转对](https://leetcode-cn.com/problems/reverse-pairs/)（分治+双指针）
+- [290. 单词规律](https://leetcode-cn.com/problems/word-pattern/)
 
 ###  哈希表
 
@@ -55,3 +57,24 @@
 
 [649. Dota2 参议院](https://leetcode-cn.com/problems/dota2-senate/)
 
+### 动态规划
+
+[174. 地下城游戏](https://leetcode-cn.com/problems/dungeon-game/) （状态定义可以依据问题考虑，最简单的想法，问什么定义什么）
+
+
+
+
+
+## 系列题
+
+### 买卖股票系列
+
+[121. 买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)（一次遍历/简单dp）
+
+[122. 买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)（贪心/dp）
+
+[123. 买卖股票的最佳时机 III](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/)（前后缀分解/dp）
+
+[188. 买卖股票的最佳时机 IV](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/) （状态机DP）
+
+[714. 买卖股票的最佳时机含手续费](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/) （贪心/dp）

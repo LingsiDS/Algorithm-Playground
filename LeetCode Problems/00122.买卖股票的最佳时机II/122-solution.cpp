@@ -23,7 +23,7 @@ public:
     }
 };
 
-//另一种思路，从第i天买入，第j天卖出，同时第j天再买入，第k天卖出，等价于第i天买入，第j天卖出，根据这个性质，可知所有交易都可以分成天数间隔1的交易
+//另一种思路，从第i天买入，第j天卖出，同时第j天再买入，第k天卖出，等价于第k天买入，第j天卖出，根据这个性质，可知所有交易都可以分成天数间隔1的交易
 //所以，所有prices[i+1] - prices[i] > 0的交易都能获得正向收益，记录下来即可，【计算的过程并不是实际的交易过程】，题意貌似不允许在第i天卖出再买入
 class Solution {
 public:
@@ -32,5 +32,24 @@ public:
         for (int i = 0; i + 1 < prices.size(); i++) 
             res += max(0, prices[i + 1] - prices[i]);
         return res;
+    }
+};
+
+
+//dp，2020年12月17日 16:06:59
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        int n = prices.size();
+        const int INF = 1e8;
+        //f[i][0]表示经过i天后，手中没有股票的最大收益，f[i][1]表示进过i天后，手中还有股票的最大收益
+        vector<vector<int>> f(n + 1, vector<int>(2, -INF));
+        f[0][0] = 0;
+
+        for (int i = 1; i <= n; i++) {
+            f[i][0] = max(f[i - 1][0], f[i - 1][1] + prices[i - 1]);//第i天没有股票有两种状态转移而来，不操作，或者卖出
+            f[i][1] = max(f[i - 1][1], f[i - 1][0] - prices[i - 1]);//第i天持有股票有两种状态转移而来，不操作，或者买入
+        }
+        return f[n][0];
     }
 };

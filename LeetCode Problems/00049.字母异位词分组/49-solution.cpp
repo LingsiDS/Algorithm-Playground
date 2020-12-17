@@ -17,3 +17,24 @@ public:
         return res;
     }
 };
+
+//2020年12月14日 09:42:45
+class Solution {
+public:
+    vector<vector<string>> groupAnagrams(vector<string>& strs) {
+        vector<vector<string>> res;
+        unordered_map<string, int> hash;//哈希表存储排序后的string在结果res中的下标
+
+        for (int i = 0; i < strs.size(); i++) {
+            string t = strs[i];
+            sort(t.begin(), t.end());
+            if (hash.count(t)) {
+                res[hash[t]].push_back(strs[i]);
+            } else {
+                hash[t] = res.size();
+                res.push_back({strs[i]});
+            }
+        }
+        return res;
+    }
+};
