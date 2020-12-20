@@ -15,6 +15,7 @@
 - [85.最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/)
 - [402.移掉k位数字](https://leetcode-cn.com/problems/remove-k-digits/)
 - [1081. 不同字符的最小子序列](https://leetcode-cn.com/problems/smallest-subsequence-of-distinct-characters/) （思路同上题）
+- [316. 去除重复字母](https://leetcode-cn.com/problems/remove-duplicate-letters/)
 
 ### 贪心
 
@@ -61,7 +62,17 @@
 
 [174. 地下城游戏](https://leetcode-cn.com/problems/dungeon-game/) （状态定义可以依据问题考虑，最简单的想法，问什么定义什么）
 
+### 树
 
+[235. 二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
+
+[236. 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)
+
+### 设计题
+
+设计题多考察数据结构的使用，使用已有的数据结构，设计支持其他操作的高效数据结构。
+
+[295. 数据流的中位数](https://leetcode-cn.com/problems/find-median-from-data-stream/)
 
 
 
