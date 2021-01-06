@@ -26,3 +26,28 @@ public:
         return res->next;
     }
 };
+
+//更简便的做法，以链表的val为判断依据，将原链表分为两部分，第一部分所有节点的val小于x，第二部分所有节点的val大于x，最后将两个链表合并起来
+//时间复杂度O(n)，空间复杂度O(1)
+class Solution {
+public:
+    ListNode* partition(ListNode* head, int x) {
+        auto small = new ListNode(-1);
+        auto smallHead = small;
+        auto large = new ListNode(-1);
+        auto largeHead = large;
+        while (head) {
+            if (head->val < x) {
+                small->next = head;
+                small = small->next;
+            } else {
+                large->next = head;
+                large = large->next;
+            }
+            head = head->next;
+        }
+        small->next = largeHead->next;
+        large->next = NULL;
+        return smallHead->next;
+    }
+};

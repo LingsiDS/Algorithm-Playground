@@ -74,6 +74,10 @@
 
 [295. 数据流的中位数](https://leetcode-cn.com/problems/find-median-from-data-stream/)
 
+### 并查集
+
+[990. 等式方程的可满足性](https://leetcode-cn.com/problems/satisfiability-of-equality-equations/)
+
 
 
 ## 系列题
