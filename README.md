@@ -78,6 +78,10 @@
 
 [990. 等式方程的可满足性](https://leetcode-cn.com/problems/satisfiability-of-equality-equations/)
 
+[721. 账户合并](https://leetcode-cn.com/problems/accounts-merge/)
+
+
+
 
 
 ## 系列题
