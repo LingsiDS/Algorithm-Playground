@@ -78,6 +78,16 @@
 
 [990. 等式方程的可满足性](https://leetcode-cn.com/problems/satisfiability-of-equality-equations/)
 
+[1631. 最小体力消耗路径](https://leetcode-cn.com/problems/path-with-minimum-effort/)（经典题，连通性，最短路，二分）
+
+[778. 水位上升的泳池中游泳](https://leetcode-cn.com/problems/swim-in-rising-water/)（和上题一样）
+
+
+
+### 双指针/滑动窗口
+
+[424. 替换后的最长重复字符](https://leetcode-cn.com/problems/longest-repeating-character-replacement/)
+
 
 
 ## 系列题
